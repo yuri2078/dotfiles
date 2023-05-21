@@ -5,9 +5,12 @@ set mouse=a
 set nowrap
 " 自动进入到新打开的窗口
 set splitbelow
-set splitright
+set nosplitright
 " 打开行号
 set number
+set tabstop=2 shiftwidth=2
+set expandtab
+set softtabstop=2
 " 高亮光标所在行
 set cursorline
 set termguicolors
@@ -33,6 +36,7 @@ tnoremap  <Esc>  <C-\><C-n>
 let g:mapleader = ','
 " 将 q 映射为 <leader>q，因为录制宏的操作比较少，而关掉窗口的操作非常频繁
 noremap <leader>q q
+
 
 " 访问系统剪切板
 map <leader>y "+y

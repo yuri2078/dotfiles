@@ -17,7 +17,7 @@ require('code_runner').setup {
     cpp = "cd $dir && g++ -lpthread -g $fileName -o $fileNameWithoutExt.out  && $dir/$fileNameWithoutExt.out",
     sh = "bash $file",
     html = microsoft_edge(),
-    rust = "cargo run",
+    rust = "cd $dir && rustc $fileName -o $fileNameWithoutExt.out && $dir/$fileNameWithoutExt.out",
     r = "Rscript $file",
     lua = "lua $file",
     nix = "nix eval -f $file",

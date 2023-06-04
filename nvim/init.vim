@@ -11,6 +11,9 @@ set number
 set tabstop=2 shiftwidth=2
 set expandtab
 set softtabstop=2
+autocmd FileType rust setlocal shiftwidth=2 softtabstop=2 expandtab
+set nofoldenable
+set foldmethod=manual
 " 高亮光标所在行
 set cursorline
 set termguicolors
@@ -88,3 +91,6 @@ noremap <Space>bc :BDelete hidden<cr>
 
 " 因为 nvim-treesitter-textobjects 使用 x 来跳转，原始的 x 被映射为 xx
 nn xx x
+
+
+

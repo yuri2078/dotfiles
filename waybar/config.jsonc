@@ -160,7 +160,7 @@
         "interval" : 1,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "  {bandwidthUpBytes} {bandwidthDownBytes}",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": " {bandwidthUpBytes} {bandwidthDownBytes}",
         "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",

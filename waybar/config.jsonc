@@ -169,7 +169,7 @@
 
     "bluetooth": {
 	"format": " {status}",
-        "on-click": "bluetoothctl connect 6C:D3:EE:63:13:05",
+        "on-click": "~/.config/blue.sh",
 	"format-disabled": "", // an empty format will hide the module
 	"format-connected": " {num_connections}",
 	"tooltip-format": "{device_alias}",

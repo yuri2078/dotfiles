@@ -7,10 +7,10 @@ set nowrap
 set splitbelow
 set nosplitright
 " 打开行号
-set number
-set tabstop=2 shiftwidth=2
-set expandtab
-set softtabstop=2
+"set number
+"set tabstop=2 shiftwidth=2
+"set expandtab
+"set softtabstop=2
 autocmd FileType rust setlocal shiftwidth=2 softtabstop=2 expandtab
 set nofoldenable
 set foldmethod=manual
@@ -36,7 +36,7 @@ autocmd FocusLost,BufLeave * silent! update
 " 在 terminal 中也是使用 esc 来进入 normal 模式
 tnoremap  <Esc>  <C-\><C-n>
 " 映射 leader 键为 ,
-let g:mapleader = ','
+let g:mapleader = ' '
 " 将 q 映射为 <leader>q，因为录制宏的操作比较少，而关掉窗口的操作非常频繁
 noremap <leader>q q
 
@@ -57,6 +57,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " 加载 lua 配置
 lua require 'usr'
+lua require 'basic'
 
 " 加载 vim 配置, 参考 https://github.com/jdhao/nvim-config
 let s:core_conf_files = [
@@ -72,19 +73,6 @@ for s:fname in s:core_conf_files
   execute printf('source %s/vim/%s', stdpath('config'), s:fname)
 endfor
 
-" patch for coc-sumneko-lua plugin on nixos
-" for details, see https://github.com/xiyaowong/coc-sumneko-lua/issues/22
-if $USERNAME == "martins3"
-  call coc#config("sumneko-lua.serverDir", "/home/martins3/.nix-profile/")
-  call coc#config("Lua.misc.parameters",
-        \ [ "--metapath",
-        \ "/home/martins3/.cache/sumneko_lua/meta",
-        \ "--logpath",
-        \ "/home/martins3/.cache/sumneko_lua/log"]
-        \)
-endif
-
-
 colorscheme tokyonight
 " this keymapping originally set by whichkey doesn't work in neovim 0.8
 noremap <Space>bc :BDelete hidden<cr>
@@ -93,4 +81,6 @@ noremap <Space>bc :BDelete hidden<cr>
 nn xx x
 
 
-
+let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
+let g:indent_guides_start_level           = 2  " 从第二层开始可视化显示缩进
+let g:indentLine_enabled = 1
